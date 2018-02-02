@@ -6,6 +6,7 @@ This is the GitHub repository for Team 8.
   - Concept Art
   - Meeting Minutes
   - Moodboards
+  - Presentations
 - Group Project
 
 # Group Team Members
