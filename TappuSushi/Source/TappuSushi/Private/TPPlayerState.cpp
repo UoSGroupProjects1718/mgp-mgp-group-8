@@ -15,9 +15,8 @@ void ATPPlayerState::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (CurrentTurn == 0 && Lives == 0)
+	if (Lives == 0)
 	{
-		CurrentTurn = MaxTurns;
 		Lives = MaxLives;
 	}
 }
@@ -37,7 +36,7 @@ void ATPPlayerState::AddTurn()
 
 void ATPPlayerState::TakeLives()
 {
-	if (Lives <= MaxLives)
+	if (Lives >= 0)
 	{
 		Lives--;
 	}

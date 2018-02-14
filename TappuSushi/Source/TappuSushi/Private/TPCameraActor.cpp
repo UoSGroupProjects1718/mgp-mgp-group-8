@@ -6,7 +6,7 @@
 
 ATPCameraActor::ATPCameraActor()
 {
-
+	
 }
 
 void ATPCameraActor::BeginPlay()
