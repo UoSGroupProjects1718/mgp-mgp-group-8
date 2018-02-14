@@ -12,8 +12,6 @@ ATPGameState::ATPGameState()
 
 void ATPGameState::AddRound()
 {
-	int32 RoundCheck;
-
 	// Only add a round if both players have taken both of their turns
 	ATPPlayerController* Player1 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 	if (Player1)
