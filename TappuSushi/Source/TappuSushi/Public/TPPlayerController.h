@@ -13,4 +13,12 @@ class TAPPUSUSHI_API ATPPlayerController : public APlayerController
 	
 public:
 	ATPPlayerController();
+
+	virtual void SetupInputComponent() override;
+
+	UFUNCTION()
+	void SwitchPlayer();
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Controller)
+	bool bIsSwitched;
 };
