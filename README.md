@@ -1,7 +1,7 @@
 # Group Project
 This is the GitHub repository for Team 8. Our game name is Tappu Sushi.
 
-# Perquisites
+# Prerequisite
 1. Visual Studio 2017
 2. Unreal Engine 4.18
 3. Git
