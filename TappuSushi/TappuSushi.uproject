@@ -1,0 +1,19 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{04068FCF-4559-7CA5-2C4F-9DB7B7DD5D8F}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "TappuSushi",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	],
+	"TargetPlatforms": [
+		"Android"
+	]
+}
