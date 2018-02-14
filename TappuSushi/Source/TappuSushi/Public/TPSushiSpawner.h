@@ -14,6 +14,12 @@ class TAPPUSUSHI_API ATPSushiSpawner : public AActor
 public:	
 	ATPSushiSpawner();
 
+private:
+#if WITH_EDITORONLY_DATA
+	UPROPERTY()
+	class UBillboardComponent* BillboardComp;
+#endif
+
 protected:
 	virtual void BeginPlay() override;
 

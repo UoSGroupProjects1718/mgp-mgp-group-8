@@ -5,10 +5,11 @@
 
 ATPSushi::ATPSushi()
 {
-	SushiSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("SushiSprite"));
-	SushiSprite->SetupAttachment(RootComponent);
+	DummyRootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DummyRoot"));
+	DummyRootComponent->SetupAttachment(RootComponent);
 
-	CurrentLocation = SushiSprite->GetComponentLocation();
+	SushiSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("SushiSprite"));
+	SushiSprite->SetupAttachment(DummyRootComponent);
 }
 
 void ATPSushi::BeginPlay()
@@ -22,8 +23,5 @@ void ATPSushi::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	FVector NewLocation = CurrentLocation * DeltaTime;
-
-	SushiSprite->SetWorldLocation(NewLocation);
 }
 

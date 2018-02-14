@@ -16,6 +16,9 @@ public:
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Sprite, meta = (AllowPrivateAccess = "true"))
+	class USceneComponent* DummyRootComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Sprite, meta = (AllowPrivateAccess = "true"))
 	class UPaperSpriteComponent* SushiSprite;
 
 protected:
@@ -23,7 +26,4 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
-
-	UPROPERTY()
-	FVector CurrentLocation;
 };

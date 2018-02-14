@@ -2,10 +2,12 @@
 
 #include "TPSushiSpawner.h"
 #include "TPSushi.h"
+#include "Components/BillboardComponent.h"
 
 ATPSushiSpawner::ATPSushiSpawner()
 {
-
+	BillboardComp = CreateDefaultSubobject<UBillboardComponent>(TEXT("BillboardComp"));
+	BillboardComp->SetupAttachment(GetRootComponent());
 }
 
 void ATPSushiSpawner::BeginPlay()

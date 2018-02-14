@@ -14,6 +14,12 @@ class TAPPUSUSHI_API ATPGameState : public AGameStateBase
 public:
 	ATPGameState();
 
+	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+
+	UFUNCTION(BlueprintCallable, Category = Game)
+	void SwitchPlayer();
+
 	void AddRound();
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Game)
@@ -21,4 +27,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Game)
 	int32 MaxRounds;
+
+	FTimerHandle TurnHandle;
 };
