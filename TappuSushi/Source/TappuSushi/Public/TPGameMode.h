@@ -15,5 +15,7 @@ public:
 	ATPGameMode();
 
 	virtual void BeginPlay() override;
-	
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sounds)
+	USoundBase* GameMusic;
 };
