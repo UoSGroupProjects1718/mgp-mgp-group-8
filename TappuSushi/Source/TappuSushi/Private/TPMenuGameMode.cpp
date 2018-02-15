@@ -12,7 +12,7 @@ void ATPMenuGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	ShowMainMenu();
+	ShowMainMenu_Implementation();
 }
 
 void ATPMenuGameMode::ShowMainMenu_Implementation()

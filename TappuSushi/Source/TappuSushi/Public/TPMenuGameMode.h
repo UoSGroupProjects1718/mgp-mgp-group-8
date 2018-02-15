@@ -22,7 +22,7 @@ public:
 	UPROPERTY()
 	class UUserWidget* CurrentWidget;
 
-	UFUNCTION(BlueprintNativeEvent)
+	UFUNCTION(BlueprintImplementableEvent)
 	void ShowMainMenu();
 	void ShowMainMenu_Implementation();
 
