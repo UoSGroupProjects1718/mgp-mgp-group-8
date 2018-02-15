@@ -25,3 +25,8 @@ void ATPSushi::Tick(float DeltaTime)
 
 }
 
+void ATPSushi::Fall()
+{
+
+}
+

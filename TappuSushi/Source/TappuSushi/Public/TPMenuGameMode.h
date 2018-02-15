@@ -22,8 +22,4 @@ public:
 	UPROPERTY()
 	class UUserWidget* CurrentWidget;
 
-	UFUNCTION(BlueprintImplementableEvent)
-	void ShowMainMenu();
-	void ShowMainMenu_Implementation();
-
 };

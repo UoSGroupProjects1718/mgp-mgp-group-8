@@ -18,4 +18,16 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sounds)
 	USoundBase* GameMusic;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = UMG)
+	TSubclassOf<UUserWidget> TutorialWidget;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = UMG)
+	TSubclassOf<UUserWidget> LossWidget;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = UMG)
+	TSubclassOf<UUserWidget> WinWidget;
+
+	UPROPERTY()
+	class UUserWidget* CurrentWidget;
 };

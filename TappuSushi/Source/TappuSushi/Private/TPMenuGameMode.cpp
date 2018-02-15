@@ -11,11 +11,4 @@ ATPMenuGameMode::ATPMenuGameMode()
 void ATPMenuGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-
-	ShowMainMenu_Implementation();
-}
-
-void ATPMenuGameMode::ShowMainMenu_Implementation()
-{
-
 }
