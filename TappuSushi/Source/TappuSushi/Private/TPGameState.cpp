@@ -9,6 +9,7 @@ ATPGameState::ATPGameState()
 {
 	Rounds = 0;
 	MaxRounds = 10;
+	bSwitchPlayer = true;
 }
 
 void ATPGameState::BeginPlay()
@@ -30,15 +31,13 @@ void ATPGameState::SwitchPlayer()
 {
 	// Flip-flop between two players for the duration of the game
 	// This code freezes with no errors in the debugger, great :( // Fixed by removing while loop, no while loops in timers!  
-	bool bLocalCheck = true;
-
-	if (bLocalCheck)
+	if (bSwitchPlayer == true)
 	{
 		ATPPlayerController* Player1 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 		if (Player1)
 		{
 			UGameplayStatics::SetPlayerControllerID(Player1, 1);
-			bLocalCheck = false;
+			bSwitchPlayer = false;
 
 			UE_LOG(LogTemp, Warning, TEXT("Player1"));
 
@@ -54,13 +53,13 @@ void ATPGameState::SwitchPlayer()
 		// Check to see if we can add round
 		AddRound();
 	}
-	else if(bLocalCheck)
+	else if(bSwitchPlayer == false)
 	{
 		ATPPlayerController* Player2 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 1));
 		if (Player2)
 		{
 			UGameplayStatics::SetPlayerControllerID(Player2, 0);
-			bLocalCheck = true;
+			bSwitchPlayer = true;
 
 			UE_LOG(LogTemp, Warning, TEXT("Player2"));
 

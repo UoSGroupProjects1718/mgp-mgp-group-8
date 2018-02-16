@@ -28,5 +28,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Game)
 	int32 MaxRounds;
 
+	UPROPERTY()
+	bool bSwitchPlayer;
+
 	FTimerHandle TurnHandle;
 };
