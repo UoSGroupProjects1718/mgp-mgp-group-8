@@ -34,6 +34,11 @@ void ATPPlayerState::AddTurn()
 	}
 }
 
+int32 ATPPlayerState::GetTurn() const
+{
+	return CurrentTurn;
+}
+
 void ATPPlayerState::TakeLives()
 {
 	if (Lives >= 0)

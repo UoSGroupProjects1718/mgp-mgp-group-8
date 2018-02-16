@@ -25,6 +25,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Player)
 	void AddTurn();
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Player)
+	int32 GetTurn() const;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Player)
 	int32 CurrentTurn;
 
