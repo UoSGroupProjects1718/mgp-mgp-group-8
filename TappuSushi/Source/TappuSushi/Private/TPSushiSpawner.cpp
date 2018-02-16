@@ -6,8 +6,8 @@
 
 ATPSushiSpawner::ATPSushiSpawner()
 {
-	BillboardComp = CreateDefaultSubobject<UBillboardComponent>(TEXT("BillboardComp"));
-	BillboardComp->SetupAttachment(GetRootComponent());
+	//BillboardComp = CreateDefaultSubobject<UBillboardComponent>(TEXT("BillboardComp"));
+	//BillboardComp->SetupAttachment(GetRootComponent());
 }
 
 void ATPSushiSpawner::BeginPlay()

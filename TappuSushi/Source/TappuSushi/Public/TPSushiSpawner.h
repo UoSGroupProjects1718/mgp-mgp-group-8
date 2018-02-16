@@ -15,10 +15,10 @@ public:
 	ATPSushiSpawner();
 
 private:
-#if WITH_EDITORONLY_DATA
-	UPROPERTY()
-	class UBillboardComponent* BillboardComp;
-#endif
+//#if WITH_EDITORONLY_DATA
+//	UPROPERTY()
+//	class UBillboardComponent* BillboardComp;
+//#endif
 
 protected:
 	virtual void BeginPlay() override;
