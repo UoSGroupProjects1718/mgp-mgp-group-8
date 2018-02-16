@@ -2,6 +2,7 @@
 
 #include "TPMenuGameMode.h"
 #include "TPMenuPlayerController.h"
+#include "Blueprint/UserWidget.h"
 
 ATPMenuGameMode::ATPMenuGameMode()
 {
@@ -11,4 +12,18 @@ ATPMenuGameMode::ATPMenuGameMode()
 void ATPMenuGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+
+	ShowMainMenu();
+}
+
+void ATPMenuGameMode::ShowMainMenu()
+{
+	if (MainMenuWidget)
+	{
+		CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), MainMenuWidget);
+		if (CurrentWidget)
+		{
+			CurrentWidget->AddToViewport();
+		}
+	}
 }

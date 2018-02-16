@@ -22,4 +22,7 @@ public:
 	UPROPERTY()
 	class UUserWidget* CurrentWidget;
 
+	UFUNCTION()
+	void ShowMainMenu();
+
 };
