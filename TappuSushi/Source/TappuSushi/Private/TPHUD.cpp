@@ -6,3 +6,10 @@ ATPHUD::ATPHUD()
 {
 
 }
+
+void ATPHUD::BeginPlay()
+{
+	Super::BeginPlay();
+
+
+}

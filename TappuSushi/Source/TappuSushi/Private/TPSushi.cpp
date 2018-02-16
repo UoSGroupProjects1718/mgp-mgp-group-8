@@ -23,6 +23,8 @@ void ATPSushi::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	float CurrentVelocity = GetVelocity().Z;
+	UE_LOG(LogTemp, Warning, TEXT("Current Velocity: %f"), CurrentVelocity)
 }
 
 void ATPSushi::Fall()

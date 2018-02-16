@@ -13,5 +13,12 @@ class TAPPUSUSHI_API ATPHUD : public AHUD
 	
 public:
 	ATPHUD();
-	
+
+	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = UMG)
+	TSubclassOf<class UUserWidget> HUDWidget;
+
+	UPROPERTY(Transient)
+	class UUserWidget* CurrentWidget;
 };
