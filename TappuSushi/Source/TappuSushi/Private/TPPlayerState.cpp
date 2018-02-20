@@ -26,6 +26,11 @@ void ATPPlayerState::AddScore(int32 Points)
 	PlayerScore += Points;
 }
 
+int32 ATPPlayerState::GetPlayerScore() const
+{
+	return PlayerScore;
+}
+
 void ATPPlayerState::AddTurn()
 {
 	if (CurrentTurn <= MaxTurns)
@@ -45,4 +50,9 @@ void ATPPlayerState::TakeLives()
 	{
 		Lives--;
 	}
+}
+
+int32 ATPPlayerState::GetLives() const
+{
+	return Lives;
 }

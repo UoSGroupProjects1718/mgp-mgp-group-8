@@ -88,7 +88,7 @@ void ATPGameState::AddRound()
 		ATPPlayerState* Player2State = Cast<ATPPlayerState>(Player2->PlayerState);
 		if (Player1State && Player2State)
 		{
-			if (Player1State->CurrentTurn == Player2State->CurrentTurn)
+			if (Player1State->GetTurn() == Player2State->GetTurn())
 			{
 				if (Rounds <= MaxRounds)
 				{
