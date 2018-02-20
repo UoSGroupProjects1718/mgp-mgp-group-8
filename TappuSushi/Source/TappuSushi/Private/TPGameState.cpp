@@ -10,6 +10,7 @@ ATPGameState::ATPGameState()
 	Rounds = 0;
 	MaxRounds = 10;
 	bSwitchPlayer = true;
+	bIsGameWon = false;
 }
 
 void ATPGameState::BeginPlay()
@@ -98,4 +99,16 @@ void ATPGameState::AddRound()
 			}
 		}
 	}
+}
+
+void ATPGameState::GameOver()
+{
+	GetWorldTimerManager().ClearTimer(TurnHandle);
+
+	// TODO: Display final score widget, notify which player has one
+}
+
+void ATPGameState::GameRestart()
+{
+	
 }
