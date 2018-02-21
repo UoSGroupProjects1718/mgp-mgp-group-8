@@ -35,8 +35,12 @@ public:
 
 	/** Get the currently active player. */
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Game)
-	bool GetIsActive() const;
-	
+	bool GetIsPlayer1Active() const;
+
+	/** Get the currently active player. */
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Game)
+	bool GetIsplayer2Active() const;
+
 protected:
 	/** The current number of rounds the game has. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Game)
@@ -50,9 +54,13 @@ protected:
 	UPROPERTY(Transient)
 	bool bSwitchPlayer;
 
-	/** Check to see if player 1 is currently active */
+	/** Check to see if player 1 is currently active. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Game)
 	bool bIsPlayer1Active;
+
+	/** Check to see if player 2 is currently active. */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Game)
+	bool bIsPlayer2Active;
 
 	/** Check to see if the game is won. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Game)
