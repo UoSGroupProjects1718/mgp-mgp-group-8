@@ -10,6 +10,7 @@ ATPGameState::ATPGameState()
 	Rounds = 0;
 	MaxRounds = 10;
 	bSwitchPlayer = true;
+	bIsPlayer1Active = true;
 	bIsGameWon = false;
 }
 
@@ -39,6 +40,7 @@ void ATPGameState::SwitchPlayer()
 		{
 			UGameplayStatics::SetPlayerControllerID(Player1, 1);
 			bSwitchPlayer = false;
+			bIsPlayer1Active = false;
 
 			UE_LOG(LogTemp, Warning, TEXT("Player1"));
 
@@ -112,4 +114,9 @@ void ATPGameState::GameRestart()
 {
 	// TODO: Restart all timers
 	// TODO: Reset the number of rounds to zero
+}
+
+bool ATPGameState::GetIsActive() const
+{
+	return bIsPlayer1Active;
 }

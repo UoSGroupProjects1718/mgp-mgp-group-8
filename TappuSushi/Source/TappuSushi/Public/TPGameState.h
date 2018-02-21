@@ -32,6 +32,10 @@ public:
 	/** Called when the game restarts. */
 	UFUNCTION(BlueprintCallable, Category = Game)
 	void GameRestart();
+
+	/** Get the currently active player. */
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Game)
+	bool GetIsActive() const;
 	
 protected:
 	/** The current number of rounds the game has. */
@@ -45,6 +49,10 @@ protected:
 	/** An internal boolean to control player switching. */
 	UPROPERTY(Transient)
 	bool bSwitchPlayer;
+
+	/** Check to see if player 1 is currently active */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Game)
+	bool bIsPlayer1Active;
 
 	/** Check to see if the game is won. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Game)
