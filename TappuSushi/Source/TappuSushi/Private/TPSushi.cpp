@@ -2,6 +2,7 @@
 
 #include "TPSushi.h"
 #include "PaperSpriteComponent.h"
+#include "GameFramework/ProjectileMovementComponent.h"
 
 ATPSushi::ATPSushi()
 {
@@ -10,6 +11,9 @@ ATPSushi::ATPSushi()
 
 	SushiSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("SushiSprite"));
 	SushiSprite->SetupAttachment(DummyRootComponent);
+
+	MovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("MoveComp"));
+	MovementComponent->UpdatedComponent = DummyRootComponent;
 }
 
 void ATPSushi::BeginPlay()

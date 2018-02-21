@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+#include "GameFramework/Actor.h"
 #include "TPSushi.generated.h"
 
 UCLASS()
-class TAPPUSUSHI_API ATPSushi : public APawn
+class TAPPUSUSHI_API ATPSushi : public AActor
 {
 	GENERATED_BODY()
 	
@@ -22,6 +22,10 @@ private:
 	/** The Sushi sprite. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Sprite, meta = (AllowPrivateAccess = "true"))
 	class UPaperSpriteComponent* SushiSprite;
+
+	/** Sushi movement component. */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	class UProjectileMovementComponent* MovementComponent;
 
 protected:
 	virtual void BeginPlay() override;
