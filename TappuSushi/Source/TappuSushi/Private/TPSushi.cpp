@@ -16,7 +16,7 @@ void ATPSushi::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	SetLifeSpan(5.0f);
+	SetLifeSpan(2.5f);
 }
 
 void ATPSushi::Tick(float DeltaTime)
@@ -29,6 +29,6 @@ void ATPSushi::Tick(float DeltaTime)
 
 void ATPSushi::Fall()
 {
-
+	
 }
 
