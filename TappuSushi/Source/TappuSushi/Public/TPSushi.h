@@ -15,9 +15,11 @@ public:
 	ATPSushi();
 
 private:
+	/** Our dummy root component. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Sprite, meta = (AllowPrivateAccess = "true"))
 	class USceneComponent* DummyRootComponent;
 
+	/** The Sushi sprite. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Sprite, meta = (AllowPrivateAccess = "true"))
 	class UPaperSpriteComponent* SushiSprite;
 
@@ -27,6 +29,7 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION()
-	void Fall();
+	/** The current velocity, used to calculate the score. */
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Actor)
+	float CurrentVelocity;
 };
