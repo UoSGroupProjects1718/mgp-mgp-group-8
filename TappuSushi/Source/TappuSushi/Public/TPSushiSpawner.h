@@ -35,5 +35,8 @@ public:
 	UPROPERTY(EditAnywhere, NoClear, BlueprintReadWrite, Category = Actor)
 	TArray<TSubclassOf<class ATPSushi>> SushiClasses;
 
+	UPROPERTY(Transient)
+	class ATPSushi* SushiActor;
+
 	FTimerHandle SpawnHandle;
 };

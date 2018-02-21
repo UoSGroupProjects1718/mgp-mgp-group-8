@@ -28,7 +28,11 @@ void ATPSushiSpawner::SpawnSushi()
 	for (int32 i = 0; i < SushiClasses.Num(); i++)
 	{
 		FActorSpawnParameters SpawnParams;
-		GetWorld()->SpawnActor<ATPSushi>(SushiClasses[i], GetActorTransform(), SpawnParams);
+		SushiActor = GetWorld()->SpawnActor<ATPSushi>(SushiClasses[i], GetActorTransform(), SpawnParams);
+		if (SushiActor)
+		{
+			
+		}
 	}
 }
 
