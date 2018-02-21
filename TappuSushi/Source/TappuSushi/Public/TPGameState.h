@@ -17,29 +17,36 @@ public:
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
-	/** Switch player each turn */
+	/** Switch player each turn. */
 	UFUNCTION(BlueprintCallable, Category = Game)
 	void SwitchPlayer();
 
-	UFUNCTION(BlueprintCallable, Category=Game)
+	/** Add a round when both players have completed their turns. */
+	UFUNCTION(BlueprintCallable, Category = Game)
 	void AddRound();
 
-	UFUNCTION(BlueprintCallable Category = Game)
+	/** Called when the game is over. */
+	UFUNCTION(BlueprintCallable, Category = Game)
 	void GameOver();
 
+	/** Called when the game restarts. */
 	UFUNCTION(BlueprintCallable, Category = Game)
 	void GameRestart();
 	
 protected:
+	/** The current number of rounds the game has. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Game)
 	int32 Rounds;
 
+	/** The maximum number of rounds the game has. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Game)
 	int32 MaxRounds;
 
-	UPROPERTY()
+	/** An internal boolean to control player switching. */
+	UPROPERTY(Transient)
 	bool bSwitchPlayer;
 
+	/** Check to see if the game is won. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Game)
 	bool bIsGameWon;
 

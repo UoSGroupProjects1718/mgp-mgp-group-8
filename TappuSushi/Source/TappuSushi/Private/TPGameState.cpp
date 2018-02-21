@@ -110,5 +110,6 @@ void ATPGameState::GameOver()
 
 void ATPGameState::GameRestart()
 {
-	
+	// TODO: Restart all timers
+	// TODO: Reset the number of rounds to zero
 }
