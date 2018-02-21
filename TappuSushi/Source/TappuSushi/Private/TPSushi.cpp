@@ -22,8 +22,5 @@ void ATPSushi::BeginPlay()
 void ATPSushi::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	CurrentVelocity = GetVelocity().Z;
-	UE_LOG(LogTemp, Warning, TEXT("Current Velocity: %f"), CurrentVelocity)
 }
 

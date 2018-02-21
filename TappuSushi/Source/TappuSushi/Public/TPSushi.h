@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "GameFramework/Pawn.h"
 #include "TPSushi.generated.h"
 
 UCLASS()
-class TAPPUSUSHI_API ATPSushi : public AActor
+class TAPPUSUSHI_API ATPSushi : public APawn
 {
 	GENERATED_BODY()
 	
@@ -28,8 +28,4 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
-
-	/** The current velocity, used to calculate the score. */
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Actor)
-	float CurrentVelocity;
 };
