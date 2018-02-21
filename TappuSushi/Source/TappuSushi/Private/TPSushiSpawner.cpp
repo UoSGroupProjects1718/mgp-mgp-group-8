@@ -14,7 +14,7 @@ void ATPSushiSpawner::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	SpawnSushi();
+	GetWorldTimerManager().SetTimer(SpawnHandle, this, &ATPSushiSpawner::SpawnSushi, 0.5f, true);
 }
 
 void ATPSushiSpawner::Tick(float DeltaTime)
@@ -28,7 +28,7 @@ void ATPSushiSpawner::SpawnSushi()
 	for (int32 i = 0; i < SushiClasses.Num(); i++)
 	{
 		FActorSpawnParameters SpawnParams;
-		AActor* SushiActor = GetWorld()->SpawnActor<ATPSushi>(SushiClasses[i], GetActorTransform(), SpawnParams);
+		GetWorld()->SpawnActor<ATPSushi>(SushiClasses[i], GetActorTransform(), SpawnParams);
 	}
 }
 

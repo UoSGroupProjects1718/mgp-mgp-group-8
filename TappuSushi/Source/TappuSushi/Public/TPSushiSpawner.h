@@ -15,6 +15,7 @@ public:
 	ATPSushiSpawner();
 
 private:
+	// Does not compile on android :(
 //#if WITH_EDITORONLY_DATA
 //	UPROPERTY()
 //	class UBillboardComponent* BillboardComp;
@@ -26,10 +27,13 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 
+	/** Spawn Sushi called via timer. */
 	UFUNCTION(BlueprintCallable, Category = Actor)
 	void SpawnSushi();
 	
+	/** The Sushi class to spawn. */
 	UPROPERTY(EditAnywhere, NoClear, BlueprintReadWrite, Category = Actor)
 	TArray<TSubclassOf<class ATPSushi>> SushiClasses;
 
+	FTimerHandle SpawnHandle;
 };
