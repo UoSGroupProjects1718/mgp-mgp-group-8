@@ -24,6 +24,16 @@ void ATPSushiSpawner::Tick(float DeltaTime)
 
 }
 
+void ATPSushiSpawner::SpawnerClicked(UPrimitiveComponent* ClickedComp, FKey ButtonClicked)
+{
+	SpawnSushi();
+}
+
+void ATPSushiSpawner::OnFingerPressed(ETouchIndex::Type FingerIndex, UPrimitiveComponent* TouchedComponent)
+{
+	SpawnSushi();
+}
+
 void ATPSushiSpawner::SpawnSushi()
 {
 	for (int32 i = 0; i < SushiClasses.Num(); i++)

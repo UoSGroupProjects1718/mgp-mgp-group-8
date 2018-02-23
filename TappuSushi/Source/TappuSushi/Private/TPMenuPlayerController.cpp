@@ -6,4 +6,5 @@ ATPMenuPlayerController::ATPMenuPlayerController()
 {
 	bShowMouseCursor = true;
 	bEnableTouchEvents = true;
+	bEnableClickEvents = true;
 }

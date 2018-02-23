@@ -15,10 +15,14 @@ public:
 	ATPPlayerController();
 
 	virtual void SetupInputComponent() override;
+	virtual void Tick(float DeltaSeconds) override;
 
 	UFUNCTION()
-	void SwitchPlayer();
+	void TriggerClick();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Controller)
-	bool bIsSwitched;
+	UFUNCTION()
+	void TraceForSpawner(const FVector Start, const FVector& End);
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
+	class ATPSushiSpawner* SpawnerFocus;
 };

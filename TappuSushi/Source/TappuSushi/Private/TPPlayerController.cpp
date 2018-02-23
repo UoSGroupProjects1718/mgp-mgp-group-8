@@ -2,34 +2,58 @@
 
 #include "TPPlayerController.h"
 #include "Kismet/GameplayStatics.h"
+#include "Camera/CameraComponent.h"
 
 ATPPlayerController::ATPPlayerController()
 {
 	bShowMouseCursor = true;	
 	bEnableClickEvents = true;	
 	bEnableTouchEvents = true;
-
-	bIsSwitched = false;
 }
 
 void ATPPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	InputComponent->BindAction("Switch", IE_Pressed, this, &ATPPlayerController::SwitchPlayer);
+	InputComponent->BindAction("TriggerClick", EInputEvent::IE_Pressed, this, &ATPPlayerController::TriggerClick);
 }
 
-void ATPPlayerController::SwitchPlayer()
+void ATPPlayerController::Tick(float DeltaSeconds)
 {
-	bIsSwitched ? UGameplayStatics::SetPlayerControllerID(this, 1) : UGameplayStatics::SetPlayerControllerID(this, 0);
-
-	int32 PlayerID = UGameplayStatics::GetPlayerControllerID(this);
-	if (PlayerID == 0)
+	if (UCameraComponent* PlayerCamera = GetViewTarget()->FindComponentByClass<UCameraComponent>())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Player 1"));
+		FVector Start = PlayerCamera->GetComponentLocation();
+		FVector End = Start + (PlayerCamera->GetComponentRotation().Vector() * 8000.0f);
+		TraceForSpawner(Start, End);
 	}
-	else if (PlayerID == 1)
+	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Player 2"));
+		FVector Start;
+		FVector Dir;
+		FVector End;
+	}
+}
+
+void ATPPlayerController::TriggerClick()
+{
+
+}
+
+void ATPPlayerController::TraceForSpawner(const FVector Start, const FVector& End)
+{
+	FHitResult HitResult;
+	GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECollisionChannel::ECC_Visibility);
+	if (HitResult.Actor.IsValid())
+	{
+		ATPSushiSpawner* HitSpawner = Cast<ATPSushiSpawner>(HitResult.Actor.Get());
+		if (SpawnerFocus != HitSpawner)
+		{
+			SpawnerFocus = HitSpawner;
+			UE_LOG(LogTemp, Warning, TEXT("Hit: %s") *HitSpawner->GetName());
+		}
+		else
+		{
+			SpawnerFocus = nullptr;
+		}
 	}
 }

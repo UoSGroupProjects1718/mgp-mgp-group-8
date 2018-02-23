@@ -29,6 +29,14 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 
+	/** Handle the spawner being clicked */
+	UFUNCTION()
+	void SpawnerClicked(UPrimitiveComponent* ClickedComp, FKey ButtonClicked);
+
+	/** Handle the spawn being touched */
+	UFUNCTION()
+	void OnFingerPressed(ETouchIndex::Type FingerIndex, UPrimitiveComponent* TouchedComponent);
+
 	/** Spawn Sushi called touch event. */
 	UFUNCTION(BlueprintCallable, Category = Actor)
 	void SpawnSushi();
