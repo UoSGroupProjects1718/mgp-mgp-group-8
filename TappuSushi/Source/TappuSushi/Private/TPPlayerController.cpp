@@ -3,6 +3,7 @@
 #include "TPPlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Camera/CameraComponent.h"
+#include "TPSushiSpawner.h"
 
 ATPPlayerController::ATPPlayerController()
 {
@@ -31,12 +32,18 @@ void ATPPlayerController::Tick(float DeltaSeconds)
 		FVector Start;
 		FVector Dir;
 		FVector End;
+		DeprojectMousePositionToWorld(Start, Dir);
+		End = Start + (Dir * 8000.0f);
+		TraceForSpawner(Start, End);
 	}
 }
 
 void ATPPlayerController::TriggerClick()
 {
-
+	if (SpawnerFocus)
+	{
+		SpawnerFocus->HandleClicked();
+	}
 }
 
 void ATPPlayerController::TraceForSpawner(const FVector Start, const FVector& End)
@@ -49,7 +56,7 @@ void ATPPlayerController::TraceForSpawner(const FVector Start, const FVector& En
 		if (SpawnerFocus != HitSpawner)
 		{
 			SpawnerFocus = HitSpawner;
-			UE_LOG(LogTemp, Warning, TEXT("Hit: %s") *HitSpawner->GetName());
+			UE_LOG(LogTemp, Warning, TEXT("Hit: %s"), *HitSpawner->GetFName().ToString())
 		}
 		else
 		{

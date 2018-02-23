@@ -11,6 +11,8 @@ ATPSushiSpawner::ATPSushiSpawner()
 
 	SpawnSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("SpawnSprite"));
 	SpawnSprite->SetupAttachment(DummyRootComp);
+	SpawnSprite->OnClicked.AddDynamic(this, &ATPSushiSpawner::SpawnerClicked);
+	SpawnSprite->OnInputTouchBegin.AddDynamic(this, &ATPSushiSpawner::OnFingerPressed);
 }
 
 void ATPSushiSpawner::BeginPlay()
@@ -26,10 +28,15 @@ void ATPSushiSpawner::Tick(float DeltaTime)
 
 void ATPSushiSpawner::SpawnerClicked(UPrimitiveComponent* ClickedComp, FKey ButtonClicked)
 {
-	SpawnSushi();
+	HandleClicked();
 }
 
 void ATPSushiSpawner::OnFingerPressed(ETouchIndex::Type FingerIndex, UPrimitiveComponent* TouchedComponent)
+{
+	HandleClicked();
+}
+
+void ATPSushiSpawner::HandleClicked()
 {
 	SpawnSushi();
 }

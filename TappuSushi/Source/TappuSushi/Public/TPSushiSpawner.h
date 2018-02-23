@@ -37,6 +37,10 @@ public:
 	UFUNCTION()
 	void OnFingerPressed(ETouchIndex::Type FingerIndex, UPrimitiveComponent* TouchedComponent);
 
+	/** Handle touch events */
+	UFUNCTION()
+	void HandleClicked();
+
 	/** Spawn Sushi called touch event. */
 	UFUNCTION(BlueprintCallable, Category = Actor)
 	void SpawnSushi();
