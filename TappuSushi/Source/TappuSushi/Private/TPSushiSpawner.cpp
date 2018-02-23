@@ -2,19 +2,20 @@
 
 #include "TPSushiSpawner.h"
 #include "TPSushi.h"
-#include "Components/BillboardComponent.h"
+#include "PaperSpriteComponent.h"
 
 ATPSushiSpawner::ATPSushiSpawner()
 {
-	//BillboardComp = CreateDefaultSubobject<UBillboardComponent>(TEXT("BillboardComp"));
-	//BillboardComp->SetupAttachment(GetRootComponent());
+	DummyRootComp = CreateDefaultSubobject<USceneComponent>(TEXT("DummyRootComp"));
+	RootComponent = DummyRootComp;
+
+	SpawnSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("SpawnSprite"));
+	SpawnSprite->SetupAttachment(DummyRootComp);
 }
 
 void ATPSushiSpawner::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	GetWorldTimerManager().SetTimer(SpawnHandle, this, &ATPSushiSpawner::SpawnSushi, 0.5f, true);
 }
 
 void ATPSushiSpawner::Tick(float DeltaTime)
@@ -28,11 +29,7 @@ void ATPSushiSpawner::SpawnSushi()
 	for (int32 i = 0; i < SushiClasses.Num(); i++)
 	{
 		FActorSpawnParameters SpawnParams;
-		SushiActor = GetWorld()->SpawnActor<ATPSushi>(SushiClasses[i], GetActorTransform(), SpawnParams);
-		if (SushiActor)
-		{
-			
-		}
+		GetWorld()->SpawnActor<ATPSushi>(SushiClasses[i], GetActorTransform(), SpawnParams);
 	}
 }
 

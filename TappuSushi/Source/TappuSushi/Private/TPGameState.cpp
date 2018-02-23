@@ -111,7 +111,7 @@ void ATPGameState::GameOver()
 {
 	GetWorldTimerManager().ClearTimer(TurnHandle);
 
-	// TODO: Display final score widget, notify which player has one
+	// TODO: Display final score widget, notify which player has won
 }
 
 void ATPGameState::GameRestart()

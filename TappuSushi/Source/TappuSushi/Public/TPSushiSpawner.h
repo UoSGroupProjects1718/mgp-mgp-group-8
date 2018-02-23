@@ -15,11 +15,13 @@ public:
 	ATPSushiSpawner();
 
 private:
-	// Does not compile on android :(
-//#if WITH_EDITORONLY_DATA
-//	UPROPERTY()
-//	class UBillboardComponent* BillboardComp;
-//#endif
+	/** A Dummy root component */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Sprite, meta = (AllowPrivateAccess = "true"))
+	class USceneComponent* DummyRootComp;
+
+	/** A Sprite to represent our spawner in the level. */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Sprite, meta = (AllowPrivateAccess = "true"))
+	class UPaperSpriteComponent* SpawnSprite;
 
 protected:
 	virtual void BeginPlay() override;
@@ -27,16 +29,11 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 
-	/** Spawn Sushi called via timer. */
+	/** Spawn Sushi called touch event. */
 	UFUNCTION(BlueprintCallable, Category = Actor)
 	void SpawnSushi();
 	
 	/** The Sushi class to spawn. */
 	UPROPERTY(EditAnywhere, NoClear, BlueprintReadWrite, Category = Actor)
 	TArray<TSubclassOf<class ATPSushi>> SushiClasses;
-
-	UPROPERTY(Transient)
-	class ATPSushi* SushiActor;
-
-	FTimerHandle SpawnHandle;
 };
