@@ -6,15 +6,11 @@
 #include "Kismet/GameplayStatics.h"
 #include "TPGameplayStatics.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class TAPPUSUSHI_API UTPGameplayStatics : public UGameplayStatics
 {
 	GENERATED_BODY()
 	
-	
-	
-	
+public:
+		
 };

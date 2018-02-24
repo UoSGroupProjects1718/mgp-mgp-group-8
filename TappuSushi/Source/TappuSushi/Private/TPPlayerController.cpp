@@ -11,3 +11,24 @@ ATPPlayerController::ATPPlayerController()
 	bEnableClickEvents = true;	
 	bEnableTouchEvents = true;
 }
+
+void ATPPlayerController::SetPawn(APawn* InPawn)
+{
+	AController::SetPawn(InPawn);
+	TPawn = Cast<ATPSushiSpawner>(InPawn);
+}
+
+void ATPPlayerController::SwitchPawn()
+{
+	int32 PlayerID = GetLocalPlayer()->GetControllerId();
+	if (PlayerID == 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Player 1 Posses Spawner"))
+		Possess(TPawn);
+	}
+	else if(PlayerID == 1)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Player 2 Posses Spawner"))
+		Possess(TPawn);
+	}
+}

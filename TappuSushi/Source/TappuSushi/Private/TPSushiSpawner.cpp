@@ -16,8 +16,6 @@ ATPSushiSpawner::ATPSushiSpawner()
 	SpawnSprite->SetupAttachment(DummyRootComp);
 	SpawnSprite->OnClicked.AddDynamic(this, &ATPSushiSpawner::SpawnerClicked);
 	SpawnSprite->OnInputTouchBegin.AddDynamic(this, &ATPSushiSpawner::OnFingerPressed);
-
-	AutoPossessPlayer = EAutoReceiveInput::Player0;
 }
 
 void ATPSushiSpawner::BeginPlay()

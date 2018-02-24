@@ -13,4 +13,11 @@ class TAPPUSUSHI_API ATPPlayerController : public APlayerController
 	
 public:
 	ATPPlayerController();
+
+	virtual void SetPawn(APawn* InPawn) override;
+
+	void SwitchPawn();
+
+	UPROPERTY(Transient)
+	class ATPSushiSpawner* TPawn;
 };
