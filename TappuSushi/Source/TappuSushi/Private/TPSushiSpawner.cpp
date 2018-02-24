@@ -5,6 +5,7 @@
 #include "TPPlayerController.h"
 #include "PaperSpriteComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 ATPSushiSpawner::ATPSushiSpawner()
 {
@@ -15,6 +16,8 @@ ATPSushiSpawner::ATPSushiSpawner()
 	SpawnSprite->SetupAttachment(DummyRootComp);
 	SpawnSprite->OnClicked.AddDynamic(this, &ATPSushiSpawner::SpawnerClicked);
 	SpawnSprite->OnInputTouchBegin.AddDynamic(this, &ATPSushiSpawner::OnFingerPressed);
+
+	AutoPossessPlayer = EAutoReceiveInput::Player0;
 }
 
 void ATPSushiSpawner::BeginPlay()
@@ -26,7 +29,7 @@ void ATPSushiSpawner::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	ATPPlayerController* Player = Cast<ATPPlayerController>(GetController());
+	ATPPlayerController* Player = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 
 	if (UCameraComponent* PlayerCamera = Player->GetViewTarget()->FindComponentByClass<UCameraComponent>())
 	{

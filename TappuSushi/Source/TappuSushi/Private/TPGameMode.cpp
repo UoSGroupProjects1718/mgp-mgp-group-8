@@ -19,5 +19,5 @@ void ATPGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UGameplayStatics::CreatePlayer(this, 1, false);
+	UGameplayStatics::CreatePlayer(this, 1);
 }
