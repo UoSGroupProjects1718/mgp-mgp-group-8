@@ -28,6 +28,16 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+	UFUNCTION()
+	void TriggerClick();
+
+	UFUNCTION()
+	void TraceForSpawner(const FVector Start, const FVector& End);
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
+	class ATPSushiSpawner* SpawnerFocus;
 
 	/** Handle the spawner being clicked */
 	UFUNCTION()

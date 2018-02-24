@@ -13,16 +13,4 @@ class TAPPUSUSHI_API ATPPlayerController : public APlayerController
 	
 public:
 	ATPPlayerController();
-
-	virtual void SetupInputComponent() override;
-	virtual void Tick(float DeltaSeconds) override;
-
-	UFUNCTION()
-	void TriggerClick();
-
-	UFUNCTION()
-	void TraceForSpawner(const FVector Start, const FVector& End);
-
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
-	class ATPSushiSpawner* SpawnerFocus;
 };

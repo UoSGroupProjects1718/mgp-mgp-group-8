@@ -6,15 +6,11 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "TPBlueprintFunctionLibrary.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class TAPPUSUSHI_API UTPBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 	
-	
-	
-	
+public:
+
 };
