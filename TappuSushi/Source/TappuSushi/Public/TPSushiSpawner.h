@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "GameFramework/Pawn.h"
 #include "TPSushiSpawner.generated.h"
 
 UCLASS()
-class TAPPUSUSHI_API ATPSushiSpawner : public AActor
+class TAPPUSUSHI_API ATPSushiSpawner : public APawn
 {
 	GENERATED_BODY()
 	
