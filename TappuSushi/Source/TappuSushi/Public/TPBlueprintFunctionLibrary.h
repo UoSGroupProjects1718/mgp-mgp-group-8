@@ -10,7 +10,6 @@ UCLASS()
 class TAPPUSUSHI_API UTPBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
-	
-public:
+
 
 };

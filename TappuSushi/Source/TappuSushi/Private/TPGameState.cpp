@@ -39,8 +39,6 @@ void ATPGameState::SwitchPlayer()
 		ATPPlayerController* Player1 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 		if (Player1)
 		{
-			Player1->Possess()
-
 			UGameplayStatics::SetPlayerControllerID(Player1, 1);
 			bSwitchPlayer = false;
 			bIsPlayer1Active = false;
