@@ -32,14 +32,6 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Player)
 	int32 GetTurn() const;
 
-	/** Decrement lives each time, a player misses. */
-	UFUNCTION(BlueprintCallable, Category = Player)
-	void TakeLives();
-
-	/** Get the number of lives this player currently has. */
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category = Player)
-	int32 GetLives() const;
-
 protected:
 	/** The players current score.*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Player)
@@ -52,12 +44,4 @@ protected:
 	/** The max number of turns each player has. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Player)
 	int32 MaxTurns;
-
-	/** The player current number of lives. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Player)
-	int32 Lives;
-
-	/** The max number of lives each player has. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Player)
-	int32 MaxLives;
 };
