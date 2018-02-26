@@ -14,10 +14,21 @@ class TAPPUSUSHI_API ATPPlayerController : public APlayerController
 public:
 	ATPPlayerController();
 
-	virtual void SetPawn(APawn* InPawn) override;
+	virtual void Tick(float DeltaSeconds) override;
+	virtual void SetupInputComponent() override;
 
-	void SwitchPawn();
+	UFUNCTION(BlueprintCallable, Category = Pawn)
+	virtual void TriggerClick();
 
-	UPROPERTY(Transient)
-	class ATPPawn* TPawn;
+	UFUNCTION(BlueprintCallable, Category = Pawn)
+	virtual void TraceForObjects(const FVector Start, const FVector& End);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Pawn)
+	bool bDrawDebugHelpers;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
+	class ATPSushi* TappedSushi;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
+	class ATPSushiSpawner* TappedSushiSpawner;
 };
