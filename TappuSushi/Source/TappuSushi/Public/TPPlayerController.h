@@ -17,5 +17,5 @@ public:
 	virtual void SetPawn(APawn* InPawn) override;
 
 	UPROPERTY(Transient)
-	class ATPSushiSpawner* TPawn;
+	class ATPPawn* TPawn;
 };

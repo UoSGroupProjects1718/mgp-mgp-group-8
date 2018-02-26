@@ -3,7 +3,7 @@
 #include "TPPlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Camera/CameraComponent.h"
-#include "TPSushiSpawner.h"
+#include "TPPawn.h"
 
 ATPPlayerController::ATPPlayerController()
 {
@@ -15,4 +15,5 @@ ATPPlayerController::ATPPlayerController()
 void ATPPlayerController::SetPawn(APawn* InPawn)
 {
 	AController::SetPawn(InPawn);
+	TPawn = Cast<ATPPawn>(InPawn);
 }
