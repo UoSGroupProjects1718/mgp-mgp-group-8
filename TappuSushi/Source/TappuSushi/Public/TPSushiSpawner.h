@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+#include "GameFramework/Actor.h"
 #include "TPSushiSpawner.generated.h"
 
 UCLASS()
-class TAPPUSUSHI_API ATPSushiSpawner : public APawn
+class TAPPUSUSHI_API ATPSushiSpawner : public AActor
 {
 	GENERATED_BODY()
 	
@@ -28,10 +28,6 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
-	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
-
-	UFUNCTION()
-	void TriggerClick();
 
 	/** Handle the spawner being clicked */
 	UFUNCTION()

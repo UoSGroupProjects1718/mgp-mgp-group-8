@@ -28,18 +28,6 @@ void ATPSushiSpawner::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void ATPSushiSpawner::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	PlayerInputComponent->BindAction("TriggerClick", EInputEvent::IE_Pressed, this, &ATPSushiSpawner::TriggerClick);
-}
-
-void ATPSushiSpawner::TriggerClick()
-{
-	HandleClicked();
-}
-
 void ATPSushiSpawner::SpawnerClicked(UPrimitiveComponent* ClickedComp, FKey ButtonClicked)
 {
 	HandleClicked();

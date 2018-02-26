@@ -14,6 +14,10 @@ class TAPPUSUSHI_API ATPPawn : public APawn
 public:
 	ATPPawn();
 
+private:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	class UCameraComponent* PawnCameraComponent;
+
 protected:
 	virtual void BeginPlay() override;
 

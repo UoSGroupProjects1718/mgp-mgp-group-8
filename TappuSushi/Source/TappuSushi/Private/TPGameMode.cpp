@@ -5,6 +5,7 @@
 #include "TPPlayerState.h"
 #include "TPGameState.h"
 #include "TPHUD.h"
+#include "TPPawn.h"
 #include "Kismet/GameplayStatics.h"
 
 ATPGameMode::ATPGameMode()
@@ -13,6 +14,7 @@ ATPGameMode::ATPGameMode()
 	PlayerStateClass = ATPPlayerState::StaticClass();
 	GameStateClass = ATPGameState::StaticClass();
 	HUDClass = ATPHUD::StaticClass();
+	DefaultPawnClass = ATPPawn::StaticClass();
 }
 
 void ATPGameMode::BeginPlay()

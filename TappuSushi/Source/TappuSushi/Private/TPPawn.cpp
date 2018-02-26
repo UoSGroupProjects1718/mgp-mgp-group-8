@@ -11,7 +11,8 @@
 
 ATPPawn::ATPPawn()
 {
-	AutoPossessPlayer = EAutoReceiveInput::Player0;
+	PawnCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("PawnCameraComp"));
+	PawnCameraComponent->SetupAttachment(RootComponent);
 
 	bDrawDebugHelpers = true;
 }
@@ -29,7 +30,18 @@ void ATPPawn::Tick(float DeltaTime)
 	{
 		if (UCameraComponent* PlayerCamera = PlayerOne->GetViewTarget()->FindComponentByClass<UCameraComponent>())
 		{
-
+			FVector Start = PlayerCamera->GetComponentLocation();
+			FVector End = Start + (PlayerCamera->GetComponentRotation().Vector() * 8000.0f);
+			TraceForObjects(Start, End);
+		}
+		else
+		{
+			FVector Start;
+			FVector Dir;
+			FVector End;
+			PlayerOne->DeprojectMousePositionToWorld(Start, Dir);
+			End = Start + (Dir * 8000.0f);
+			TraceForObjects(Start, End);
 		}
 	}
 
@@ -37,7 +49,18 @@ void ATPPawn::Tick(float DeltaTime)
 	{
 		if (UCameraComponent* PlayerCamera = PlayerTwo->GetViewTarget()->FindComponentByClass<UCameraComponent>())
 		{
-
+			FVector Start = PlayerCamera->GetComponentLocation();
+			FVector End = Start + (PlayerCamera->GetComponentRotation().Vector() * 8000.0f);
+			TraceForObjects(Start, End);
+		}
+		else
+		{
+			FVector Start;
+			FVector Dir;
+			FVector End;
+			PlayerTwo->DeprojectMousePositionToWorld(Start, Dir);
+			End = Start + (Dir * 8000.0f);
+			TraceForObjects(Start, End);
 		}
 	}
 }
@@ -51,12 +74,20 @@ void ATPPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void ATPPawn::CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult)
 {
-
+	Super::CalcCamera(DeltaTime, OutResult);
 }
 
 void ATPPawn::TriggerClick()
 {
+	if (TappedSushi)
+	{
+		// TODO: Score
+	}
 
+	if (TappedSushiSpawner)
+	{
+		// TODO: Spawn Sushi
+	}
 }
 
 void ATPPawn::TraceForObjects(const FVector Start, const FVector& End)
@@ -72,17 +103,17 @@ void ATPPawn::TraceForObjects(const FVector Start, const FVector& End)
 	if (HitResult.Actor.IsValid())
 	{
 		ATPSushi* HitSushi = Cast<ATPSushi>(HitResult.Actor.Get());
-		if (HitSushi)
+		if (TappedSushi != HitSushi)
 		{
+			TappedSushi = HitSushi;
 			UE_LOG(LogTemp, Warning, TEXT("Hit Sushi"))
-			// TODO: Calculate Score
 		}
 
 		ATPSushiSpawner* HitSpawner = Cast<ATPSushiSpawner>(HitResult.Actor.Get());
-		if (HitSpawner)
+		if (TappedSushiSpawner != HitSpawner)
 		{
+			TappedSushiSpawner = HitSpawner;
 			UE_LOG(LogTemp, Warning, TEXT("Hit Sushi Spawner"))
-			// TODO: Spawn Sushi 
 		}
 	}
 }
