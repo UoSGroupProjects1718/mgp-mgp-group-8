@@ -40,6 +40,7 @@ void ATPGameState::SwitchPlayer()
 		if (Player1)
 		{
 			UGameplayStatics::SetPlayerControllerID(Player1, 1);
+			Player1->SwitchPawn();
 
 			bSwitchPlayer = false;
 			bIsPlayer1Active = false;
@@ -65,6 +66,7 @@ void ATPGameState::SwitchPlayer()
 		if (Player2)
 		{
 			UGameplayStatics::SetPlayerControllerID(Player2, 0);
+			Player2->SwitchPawn();
 
 			bSwitchPlayer = true;
 			bIsPlayer1Active = true;

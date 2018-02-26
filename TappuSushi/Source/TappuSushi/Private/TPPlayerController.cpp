@@ -17,3 +17,16 @@ void ATPPlayerController::SetPawn(APawn* InPawn)
 	AController::SetPawn(InPawn);
 	TPawn = Cast<ATPPawn>(InPawn);
 }
+
+void ATPPlayerController::SwitchPawn()
+{
+	int32 ID = GetLocalPlayer()->GetControllerId();
+	if (ID == 0)
+	{
+		Possess(TPawn);
+	}
+	else if (ID == 1)
+	{
+		Possess(TPawn);
+	}
+}
