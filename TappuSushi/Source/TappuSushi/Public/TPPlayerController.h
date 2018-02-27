@@ -17,6 +17,8 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 	virtual void SetupInputComponent() override;
 
+	void SwapPlayerID(bool bSwap);
+
 	UFUNCTION(BlueprintCallable, Category = Pawn)
 	virtual void TriggerClick();
 

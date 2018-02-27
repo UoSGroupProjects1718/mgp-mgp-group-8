@@ -39,13 +39,12 @@ void ATPGameState::SwitchPlayer()
 		ATPPlayerController* Player1 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 		if (Player1)
 		{
-			UGameplayStatics::SetPlayerControllerID(Player1, 1);
-
 			bSwitchPlayer = false;
 			bIsPlayer1Active = false;
 			bIsPlayer2Active = true;
 
 			UE_LOG(LogTemp, Warning, TEXT("Player1"));
+			UE_LOG(LogTemp, Warning, TEXT("Player1 ID: %d"), UGameplayStatics::GetPlayerControllerID(Player1))
 
 			// Get player 1 state and add turn
 			ATPPlayerState* Player1State = Cast<ATPPlayerState>(Player1->PlayerState);
@@ -64,13 +63,12 @@ void ATPGameState::SwitchPlayer()
 		ATPPlayerController* Player2 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 1));
 		if (Player2)
 		{
-			UGameplayStatics::SetPlayerControllerID(Player2, 0);
-
 			bSwitchPlayer = true;
 			bIsPlayer1Active = true;
 			bIsPlayer2Active = false;
 
 			UE_LOG(LogTemp, Warning, TEXT("Player2"));
+			UE_LOG(LogTemp, Warning, TEXT("Player2 ID: %d"), UGameplayStatics::GetPlayerControllerID(Player2))
 
 			// Get player 2 state and add turn
 			ATPPlayerState* Player2State = Cast<ATPPlayerState>(Player2->PlayerState);
@@ -79,10 +77,10 @@ void ATPGameState::SwitchPlayer()
 				Player2State->AddTurn();
 				UE_LOG(LogTemp, Warning, TEXT("Player2 Turn: %d"), Player2State->GetTurn())
 			}
-
-			// Check to see if we can add round
-			AddRound();
 		}
+
+		// Check to see if we can add round
+		AddRound();
 	}
 }
 

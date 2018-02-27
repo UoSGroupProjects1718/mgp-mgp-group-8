@@ -75,6 +75,18 @@ void ATPPlayerController::SetupInputComponent()
 	}
 }
 
+void ATPPlayerController::SwapPlayerID(bool bSwap)
+{
+	if (bSwap == true)
+	{
+		UGameplayStatics::SetPlayerControllerID(this, 1);
+	}
+	else if (bSwap == false)
+	{
+		UGameplayStatics::SetPlayerControllerID(this, 0);
+	}
+}
+
 void ATPPlayerController::TriggerClick()
 {
 	if (TappedSushi)
