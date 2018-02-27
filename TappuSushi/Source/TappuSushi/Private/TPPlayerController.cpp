@@ -64,7 +64,15 @@ void ATPPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	InputComponent->BindAction("TriggerClick", IE_Pressed, this, &ATPPlayerController::TriggerClick);
+	int32 TempID = GetLocalPlayer()->GetControllerId();
+	if (TempID == 0)
+	{
+		InputComponent->BindAction("TriggerClick_P1", IE_Pressed, this, &ATPPlayerController::TriggerClick);
+	}
+	else if (TempID == 1)
+	{
+		InputComponent->BindAction("TriggerClick_P2", IE_Pressed, this, &ATPPlayerController::TriggerClick);
+	}
 }
 
 void ATPPlayerController::TriggerClick()
