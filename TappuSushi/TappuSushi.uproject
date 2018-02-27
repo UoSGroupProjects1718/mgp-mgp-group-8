@@ -7,6 +7,7 @@
 		{
 			"Name": "TappuSushi",
 			"Type": "Runtime",
+<<<<<<< HEAD
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
 				"Engine"
@@ -15,5 +16,9 @@
 	],
 	"TargetPlatforms": [
 		"Android"
+=======
+			"LoadingPhase": "Default"
+		}
+>>>>>>> f0e497458d69906a810a453fa83f62f6f319b315
 	]
 }
