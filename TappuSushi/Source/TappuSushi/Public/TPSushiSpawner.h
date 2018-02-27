@@ -23,6 +23,10 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Sprite, meta = (AllowPrivateAccess = "true"))
 	class UPaperSpriteComponent* SpawnSprite;
 
+	/** A Scene component used to spawn sushi */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Sprite, meta = (AllowPrivateAccess = "true"))
+	class USceneComponent* SpawnLocation;
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -45,7 +49,13 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Actor)
 	void SpawnSushi();
 	
-	/** The Sushi class to spawn. */
+	/** Sushi classes to spawn. */
 	UPROPERTY(EditAnywhere, NoClear, BlueprintReadWrite, Category = Actor)
 	TArray<TSubclassOf<class ATPSushi>> SushiClasses;
+
+	/** Sushi available to spawn */
+	TArray<class ATPSushi*> SushiToSpawn;
+
+	/** Sushi currently spawned */
+	TArray<class ATPSushi*> ActiveSushi;
 };

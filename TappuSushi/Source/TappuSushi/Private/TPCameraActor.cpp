@@ -15,10 +15,14 @@ void ATPCameraActor::BeginPlay()
 	Super::BeginPlay();
 
 	ATPPlayerController* Player1 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
-	ATPPlayerController* Player2 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 1));
-	if (Player1 && Player2)
+	if (Player1)
 	{
 		Player1->SetViewTarget(this);
+	}
+
+	ATPPlayerController* Player2 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 1));
+	if (Player2)
+	{
 		Player2->SetViewTarget(this);
 	}
 }

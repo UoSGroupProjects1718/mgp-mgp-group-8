@@ -16,6 +16,9 @@ ATPSushiSpawner::ATPSushiSpawner()
 	SpawnSprite->SetupAttachment(DummyRootComp);
 	SpawnSprite->OnClicked.AddDynamic(this, &ATPSushiSpawner::SpawnerClicked);
 	SpawnSprite->OnInputTouchBegin.AddDynamic(this, &ATPSushiSpawner::OnFingerPressed);
+
+	SpawnLocation = CreateDefaultSubobject<USceneComponent>(TEXT("SpawnLoc"));
+	SpawnLocation->SetupAttachment(DummyRootComp);
 }
 
 void ATPSushiSpawner::BeginPlay()
@@ -45,6 +48,10 @@ void ATPSushiSpawner::HandleClicked()
 
 void ATPSushiSpawner::SpawnSushi()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Spawn Food"))
+	if (SushiClasses.Num() >= 0)
+	{
+		GetWorld()->SpawnActor<ATPSushi>(SushiClasses[0], SpawnLocation->GetComponentLocation(), SpawnLocation->GetComponentRotation());
+		UE_LOG(LogTemp, Warning, TEXT("Spawn Food"))
+	}
 }
 

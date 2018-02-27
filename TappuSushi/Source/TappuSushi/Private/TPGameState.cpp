@@ -36,6 +36,7 @@ void ATPGameState::SwitchPlayer()
 	// This code freezes with no errors in the debugger, great :( // Fixed by removing while loop, no while loops in timers!  
 	if (bSwitchPlayer == true)
 	{
+		// Get player one controller
 		ATPPlayerController* Player1 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 		if (Player1)
 		{
@@ -60,6 +61,7 @@ void ATPGameState::SwitchPlayer()
 	}
 	else if(bSwitchPlayer == false)
 	{
+		// Get player two controller
 		ATPPlayerController* Player2 = Cast<ATPPlayerController>(UGameplayStatics::GetPlayerController(this, 1));
 		if (Player2)
 		{

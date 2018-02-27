@@ -32,4 +32,19 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
+
+	/** Handle the Sushi being clicked */
+	UFUNCTION()
+	void SushiClicked(UPrimitiveComponent* ClickedComp, FKey ButtonClicked);
+
+	/** Handle the Sushi being touched */
+	UFUNCTION()
+	void OnFingerPressed(ETouchIndex::Type FingerIndex, UPrimitiveComponent* TouchedComponent);
+
+	/** Handle touch events */
+	UFUNCTION()
+	void HandleClicked();
+
+	UFUNCTION()
+	void CalculateScore();
 };

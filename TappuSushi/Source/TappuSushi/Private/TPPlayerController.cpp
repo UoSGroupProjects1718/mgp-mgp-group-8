@@ -91,7 +91,7 @@ void ATPPlayerController::TriggerClick()
 {
 	if (TappedSushi)
 	{
-		// TODO: Score
+		TappedSushi->HandleClicked();
 	}
 
 	if (TappedSushiSpawner)
