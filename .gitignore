@@ -1,36 +1,3 @@
-# Unreal Ignores
-/*/.vs/**
-/*.sln
-/*/*.sln
-*.db
-*.opendb
-*.suo
-*.opensdf
-*.sdf
-*.lib
-*.idb
-*.a
-*.dll
-*.exe
-*.bz2
-*.zip
-*.tga
-*.dylib
-*.gz
-*.so
-*.jar
-*.mp4
-*.pak
-*.bmp
-*.obj
-*.pdb
-/*/DerivedDataCache/**
-/*/Intermediate/**
-/*/Binaries/**
-/*/Saved/**
-/*/Build/**
-/*/AndroidBuild/**
-
 # Unity Ignores
 [Ll]ibrary/
 [Tt]emp/
