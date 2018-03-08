@@ -201,7 +201,13 @@ public class LevelManager : MonoBehaviour
         Destroy(currentDumpling);
     }
 
-	// This function is called via the Prawn script.
+    public void DestroyFood()
+    {
+        // TODO: Get the current food via the object pool
+        // TODO: Switch which player can interact with food
+    }
+
+    // This function is called via the Prawn script.
     public void DestroyPrawn()
     {
 		// Sets the currentPrawn to none.

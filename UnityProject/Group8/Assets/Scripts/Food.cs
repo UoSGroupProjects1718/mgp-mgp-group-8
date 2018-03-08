@@ -10,23 +10,28 @@ public class Food : MonoBehaviour
     [Range(0.0f, 6.0f)]
     public float speed;
 
-	// Use this for initialization
-	void Start ()
+    virtual protected void Start ()
     {
 		
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    virtual protected void Update ()
     {
-		
+        transform.position += Vector3.right * speed;
 	}
+
+    virtual protected void OnBecameInvisible()
+    {
+        // TODO: Call destroy food function from level manager
+    }
 }
 
-public class Sushi : Food
+public class Salmon : Food
+{ 
+
+}
+
+public class Nigri : Food
 {
-    public Sushi()
-    {
-        
-    }
+
 }
