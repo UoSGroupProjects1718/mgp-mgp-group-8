@@ -134,6 +134,10 @@ public class LevelManager : MonoBehaviour
         {
             SceneManager.LoadScene("PlayerTwoWin");
         }
+
+		if (Input.GetKey ("escape")) {
+			Application.Quit ();
+		}
     }
 
 	// A function that is assigned to a button and called when the button is clicked.
