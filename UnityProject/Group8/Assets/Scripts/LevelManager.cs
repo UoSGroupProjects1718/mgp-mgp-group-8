@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-
-
+    // TODO: Replace with an object pool
 	GameObject currentPrawn;
 	GameObject currentDumpling;
+    GameObject currentSalmon;
+    GameObject currentNigri;
     
 	// UI button that trigger a function when clicked.
 	// The function is shown in the inspector when the button is selected.
@@ -105,7 +106,7 @@ public class LevelManager : MonoBehaviour
         Player2.text = "" + scorePlayer2;
 
 		// This sets the last prawn to enter the boundary as the currentPrawn.
-        currentPrawn = boundary.GetComponent<boundaryCubeScript>().currentPrawn;
+        currentPrawn = boundary.GetComponent<BoundaryCubeScript>().currentPrawn;
 		
 		// If there is a currentPrawn.
         if (currentPrawn != null)
@@ -116,7 +117,7 @@ public class LevelManager : MonoBehaviour
         }
 
 		// Same as the above comments except currentPrawn is replaced by currentDumpling.
-        currentDumpling = boundary.GetComponent<boundaryCubeScript>().currentDumpling;
+        currentDumpling = boundary.GetComponent<BoundaryCubeScript>().currentDumpling;
         if (currentDumpling != null)
         {
             distanceBetween = Vector3.Distance(currentDumpling.transform.position, boundary.transform.position);
@@ -201,10 +202,12 @@ public class LevelManager : MonoBehaviour
         Destroy(currentDumpling);
     }
 
+    // Rather than having duplicate methods, we destroy food with one method.
     public void DestroyFood()
     {
         // TODO: Get the current food via the object pool
         // TODO: Switch which player can interact with food
+        // TODO: Add turn
     }
 
     // This function is called via the Prawn script.
@@ -224,6 +227,18 @@ public class LevelManager : MonoBehaviour
         currentDumpling = null;
         onePlayer.interactable = true;
         narutoTwo.interactable = false;
+        turnTaking += 1;
+    }
+
+    public void DestroySalmon()
+    {
+        currentSalmon = null;
+        turnTaking += 1;
+    }
+
+    public void DestroyNigri()
+    {
+        currentNigri = null;
         turnTaking += 1;
     }
 }
