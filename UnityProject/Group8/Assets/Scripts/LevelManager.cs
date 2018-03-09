@@ -59,8 +59,6 @@ public class LevelManager : MonoBehaviour
 	// An integer that contains a count of how many turns have been taken.
 	// Visible in the inspector for debug purposes.
     public int turnTaking;
-
-
  
 	// A function that is assigned to a button and called when the button is clicked.
     public void OnePlayerClick()
@@ -218,7 +216,6 @@ public class LevelManager : MonoBehaviour
        twoPlayer.interactable = true;
        narutoOne.interactable = false;
        turnTaking += 1;
-
     }
 
     public void DestroyDumpling()
