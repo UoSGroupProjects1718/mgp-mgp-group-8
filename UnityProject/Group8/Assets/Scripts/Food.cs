@@ -6,10 +6,11 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public GameObject food;
-    public LevelManager level;
+    public GameObject level;
 
-    [Header("Components")]
-    public SpriteRenderer sprite;
+    // Comment out for now we shouldn't need this
+    //[Header("Components")]
+    //public SpriteRenderer sprite;
 
     [Range(0.0f, 6.0f)]
     public float speed;
@@ -19,7 +20,7 @@ public class Food : MonoBehaviour
 		
 	}
 
-    void Update ()
+    public void Update ()
     {
         transform.position += Vector3.right * speed;
 	}

@@ -7,7 +7,7 @@ public class Nigri : Food
 {
     // TODO: We could set speed here
 
-    private void OnBecameInvisible()
+    public void OnBecameInvisible()
     {
         level.GetComponent<LevelManager>().DestroyNigri();
     }
