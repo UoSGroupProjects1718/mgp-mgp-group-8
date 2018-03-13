@@ -496,6 +496,8 @@ MonoBehaviour:
   food:
   - {fileID: 1210985468393510, guid: 36ed67eacd1cc424085abc8fc3851413, type: 2}
   - {fileID: 1073324230226782, guid: cc5e95b8930a00d44aa9dfcc791c5902, type: 2}
+  - {fileID: 1664400053415672, guid: 42c3aba9abcfbb449bd5863c7e88d064, type: 2}
+  - {fileID: 1927753871188136, guid: c6680457a5dae7d45a69f0abf4599ef0, type: 2}
   spawn: {fileID: 929815448}
   boundary: {fileID: 1353850394}
   last: 0

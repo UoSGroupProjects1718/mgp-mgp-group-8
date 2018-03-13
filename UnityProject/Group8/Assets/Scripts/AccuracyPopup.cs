@@ -7,7 +7,6 @@ public class AccuracyPopup : MonoBehaviour {
 	// A float that starts at 1.
     float timer = 1;
 
-	
 	// Update is called once per frame.
 	void Update () {
 
