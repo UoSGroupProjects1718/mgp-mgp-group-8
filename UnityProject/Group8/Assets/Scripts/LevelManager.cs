@@ -104,7 +104,7 @@ public class LevelManager : MonoBehaviour
         Player2.text = "" + scorePlayer2;
 
 		// This sets the last prawn to enter the boundary as the currentPrawn.
-        currentPrawn = boundary.GetComponent<BoundaryCubeScript>().currentPrawn;
+        currentPrawn = boundary.GetComponent<boundaryCubeScript>().currentPrawn;
 		
 		// If there is a currentPrawn.
         if (currentPrawn != null)
@@ -115,7 +115,7 @@ public class LevelManager : MonoBehaviour
         }
 
 		// Same as the above comments except currentPrawn is replaced by currentDumpling.
-        currentDumpling = boundary.GetComponent<BoundaryCubeScript>().currentDumpling;
+        currentDumpling = boundary.GetComponent<boundaryCubeScript>().currentDumpling;
         if (currentDumpling != null)
         {
             distanceBetween = Vector3.Distance(currentDumpling.transform.position, boundary.transform.position);

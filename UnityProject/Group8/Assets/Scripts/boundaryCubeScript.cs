@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoundaryCubeScript : MonoBehaviour
+public class boundaryCubeScript : MonoBehaviour
 {
     // TODO: We could replace this with a get object pool method
     public GameObject currentPrawn;
