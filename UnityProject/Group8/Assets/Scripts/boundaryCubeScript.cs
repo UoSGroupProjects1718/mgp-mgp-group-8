@@ -16,7 +16,11 @@ public class boundaryCubeScript : MonoBehaviour {
         }
        if(other.gameObject.tag == "Dumpling")
         {
-            currentDumpling = other.gameObject;
+            currentPrawn = other.gameObject;
+        }
+       if(other.gameObject.tag == "Maki")
+        {
+            currentPrawn = other.gameObject;
         }
     }
 
@@ -28,8 +32,14 @@ public class boundaryCubeScript : MonoBehaviour {
             currentPrawn = null;
         }
 
-		if (other.gameObject.tag == "Dumpling") {
-			currentDumpling = null;
+		if (other.gameObject.tag == "Dumpling")
+        {
+			currentPrawn = null;
 		}
+
+        if (other.gameObject.tag == "Maki")
+        {
+            currentPrawn = null;
+        }
     }
 }

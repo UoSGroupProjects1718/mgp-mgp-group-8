@@ -82,9 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prawn: {fileID: 1210985468393510}
+  levelManager: {fileID: 0}
   speed: 0.1
-  thisRigidBody: {fileID: 54889359641260920}
-  naruto: {fileID: 0}
 --- !u!212 &212829407014855140
 SpriteRenderer:
   m_ObjectHideFlags: 1

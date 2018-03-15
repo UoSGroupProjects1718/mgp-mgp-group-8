@@ -17,11 +17,23 @@ public class Prawn : MonoBehaviour
 		transform.position += Vector3.right * speed;
 
 	}
-    // OnBecameInvisible is called whenever the object this script is attatched to, leaves the cameras view.
-    public void OnBecameInvisible()
+
+  /*  public void OnTriggerEnter(Collider other)
     {
-		// This gets the LevelManager and calls the DestroyPrawn function.
-        levelManager.GetComponent<LevelManager>().DestroyPrawn();
+        if (other.gameObject.tag == "LevelEnd")
+        {
+            levelManager.GetComponent<LevelManager>().turnRotation += 1;
+            Destroy(this.gameObject);
+
+        }
+    }*/
+    // OnBecameInvisible is called whenever the object this script is attatched to, leaves the cameras view.
+   public void OnBecameInvisible()
+    {
+        // This gets the LevelManager and calls the DestroyPrawn function.
+        //levelManager.GetComponent<LevelManager>().DestroyPrawn();
+        levelManager.GetComponent<LevelManager>().turnRotation += 1;
+        Destroy(gameObject);
     }
 
 }

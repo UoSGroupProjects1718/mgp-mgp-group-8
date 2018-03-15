@@ -8,6 +8,8 @@ TagManager:
   - Prawn
   - Dumpling
   - Sushi
+  - Maki
+  - LevelEnd
   layers:
   - Default
   - TransparentFX

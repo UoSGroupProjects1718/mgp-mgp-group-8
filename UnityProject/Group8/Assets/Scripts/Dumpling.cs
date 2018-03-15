@@ -22,7 +22,8 @@ public class Dumpling : MonoBehaviour {
     // OnBecameInvisible is called whenever the object this script is attatched to, leaves the camera view.
     public void OnBecameInvisible()
     {
-		// This gets the LevelManager and calls the DestroyPrawn function.
-        levelManager.GetComponent<LevelManager>().DestroyDumpling();
+        // This gets the LevelManager and calls the DestroyPrawn function.
+        //levelManager.GetComponent<LevelManager>().DestroyDumpling();
+        Destroy(gameObject);
     }
 }
