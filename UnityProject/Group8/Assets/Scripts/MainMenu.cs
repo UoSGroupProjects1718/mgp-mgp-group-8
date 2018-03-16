@@ -18,6 +18,9 @@ public class MainMenu : MonoBehaviour
     {
  		// This loads the scene that is named within the quotations.
         SceneManager.LoadScene("Level");
+
+        // Play sound on button tap
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void Replay()
