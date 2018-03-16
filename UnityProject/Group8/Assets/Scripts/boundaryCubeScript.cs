@@ -16,19 +16,15 @@ public class boundaryCubeScript : MonoBehaviour
        if (other.gameObject.tag == "Prawn")
        {
             currentPrawn = other.gameObject;
-       }
-       if (other.gameObject.tag == "Dumpling")
-       {
-            currentDumpling = other.gameObject;
-       }
-       if (other.gameObject.tag == "Salmon")
-       {
-           currentSalmon = other.gameObject;
-       }
-       if (other.gameObject.tag == "Nigri")
-       {
-           currentNigri = other.gameObject;
-       }
+        }
+       if(other.gameObject.tag == "Dumpling")
+        {
+            currentPrawn = other.gameObject;
+        }
+       if(other.gameObject.tag == "Maki")
+        {
+            currentPrawn = other.gameObject;
+        }
     }
 
     // Event called on end overlap with trigger box
@@ -38,17 +34,15 @@ public class boundaryCubeScript : MonoBehaviour
         {
             currentPrawn = null;
         }
+
 		if (other.gameObject.tag == "Dumpling")
         {
-			currentDumpling = null;
+			currentPrawn = null;
 		}
-        if (other.gameObject.tag == "Salmon")
+
+        if (other.gameObject.tag == "Maki")
         {
-            currentSalmon = other.gameObject;
-        }
-        if (other.gameObject.tag == "Nigri")
-        {
-            currentNigri = other.gameObject;
+            currentPrawn = null;
         }
     }
 }
