@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-
-
+    // TODO: Replace with an object pool
 	GameObject currentPrawn;
 	GameObject currentDumpling;
-    GameObject currentSushi;
-    
+    GameObject currentSalmon;
+    GameObject currentNigri;
+
 	// UI button that trigger a function when clicked.
 	// The function is shown in the inspector when the button is selected.
 	public Button onePlayer;
@@ -85,7 +85,7 @@ public class LevelManager : MonoBehaviour
     public int turnRotation;
 
 
- 
+
 	// A function that is assigned to a button and called when the button is clicked.
     public void OnePlayerClick()
     {
@@ -164,7 +164,7 @@ public class LevelManager : MonoBehaviour
 
 		// This sets the last prawn to enter the boundary as the currentPrawn.
 		currentPrawn = boundary.GetComponent<boundaryCubeScript> ().currentPrawn;
-		
+
 		// If there is a currentPrawn.
 		if (currentPrawn != null) {
 			// Sets the distanceBetween variable as the distance between the prawn and the centre of the boundary.
@@ -181,7 +181,7 @@ public class LevelManager : MonoBehaviour
 
 		// This if statement is called when 20 turns have been taken and if player one has the highest score.
 		if (turnTaking == 50 && scorePlayer1 > scorePlayer2) {
-			// When this function is called, 
+			// When this function is called,
 			SceneManager.LoadScene ("PlayerOneWin");
 		}
 
@@ -377,7 +377,15 @@ public class LevelManager : MonoBehaviour
         Destroy(currentPrawn);
     }
 
-	// This function is called via the Prawn script.
+    // Rather than having duplicate methods, we destroy food with one method.
+    public void DestroyFood()
+    {
+        // TODO: Get the current food via the object pool
+        // TODO: Switch which player can interact with food
+        // TODO: Add turn
+    }
+
+    // This function is called via the Prawn script.
     public void DestroyPrawn()
     {
 		// Sets the currentPrawn to none.
@@ -402,5 +410,17 @@ public class LevelManager : MonoBehaviour
     {
         currentSushi = null;
 
+    }
+
+    public void DestroySalmon()
+    {
+        currentSalmon = null;
+        turnTaking += 1;
+    }
+
+    public void DestroyNigri()
+    {
+        currentNigri = null;
+        turnTaking += 1;
     }
 }

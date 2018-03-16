@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boundaryCubeScript : MonoBehaviour {
-
+public class boundaryCubeScript : MonoBehaviour
+{
+    // TODO: We could replace this with a get object pool method
     public GameObject currentPrawn;
     public GameObject currentDumpling;
+    public GameObject currentSalmon;
+    public GameObject currentNigri;
 
-
+    // Event called on begin overlap with trigger box
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Prawn")
-        {
+       if (other.gameObject.tag == "Prawn")
+       {
             currentPrawn = other.gameObject;
         }
        if(other.gameObject.tag == "Dumpling")
@@ -24,7 +27,7 @@ public class boundaryCubeScript : MonoBehaviour {
         }
     }
 
-
+    // Event called on end overlap with trigger box
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Prawn")
