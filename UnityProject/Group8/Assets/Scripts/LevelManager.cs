@@ -11,10 +11,11 @@ public class LevelManager : MonoBehaviour
 	GameObject currentDumpling;
     GameObject currentSalmon;
     GameObject currentNigri;
+    GameObject currentSushi;
 
-	// UI button that trigger a function when clicked.
-	// The function is shown in the inspector when the button is selected.
-	public Button onePlayer;
+    // UI button that trigger a function when clicked.
+    // The function is shown in the inspector when the button is selected.
+    public Button onePlayer;
     public Button twoPlayer;
 
 	// An array that contains game objects for each type of food that is being spawned. Visible in the inspector.
