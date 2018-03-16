@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dafe14309422da499b2f129f6116f0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 0}
+  food: {fileID: 1632871995604866}
   level: {fileID: 0}
   speed: 0
 --- !u!212 &212137864880613926
