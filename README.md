@@ -1,6 +1,10 @@
 # Group Project
 This is the GitHub repository for Team 8. Our game name is Tappu Sushi.
 
+# Branches
+master - is the active development branch
+release - is the branch for project builds
+
 # Prerequisite
 1. Visual Studio 2017
 2. Unity
@@ -13,9 +17,6 @@ This is the GitHub repository for Team 8. Our game name is Tappu Sushi.
   - Meeting Minutes
   - Moodboards
   - Presentations
-- Project Prototype
-  - Config
-  - Content
 
 # Group Team Members
 * Charlie Kinglake - Project Leader

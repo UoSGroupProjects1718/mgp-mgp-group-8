@@ -105,8 +105,11 @@ public class LevelManager : MonoBehaviour
             timestamp = Time.time + timeBetweenClicks;
 
             //playerSwap = false;
-			//onePlayer.interactable = false;
-			//narutoOne.interactable = true;
+            //onePlayer.interactable = false;
+            //narutoOne.interactable = true;
+
+            // Play sound on tap
+            gameObject.GetComponent<AudioSource>().Play();
         }
     }
 
@@ -126,6 +129,9 @@ public class LevelManager : MonoBehaviour
             //playerSwap = true;
             //twoPlayer.interactable = false;
             //narutoTwo.interactable = true;
+
+            // Play sound on tap
+            gameObject.GetComponent<AudioSource>().Play();
         }
     }
 
@@ -262,6 +268,9 @@ public class LevelManager : MonoBehaviour
 	// A function that is assigned to a button and called when the button is clicked.
     public void player1Naruto()
     {
+        // Play sound on tap
+        // Bug: Doesn't play the right sound
+        //gameObject.GetComponent<AudioSource>().Play();
 
         if (currentPrawn == null) { return; }
         last = distanceBetween;
@@ -320,7 +329,11 @@ public class LevelManager : MonoBehaviour
 	// A function that is assigned to a button and called when the button is clicked.
     public void player2Naruto()
     {
-		// If currentDumpling is set to none, returns the type of the function.
+        // Play sound on tap
+        // Bug: Doesn't play the right sound
+        //gameObject.GetComponent<AudioSource>().Play();
+
+        // If currentDumpling is set to none, returns the type of the function.
         if (currentPrawn == null) { return; }
 
 		//onePlayer.interactable = true;
