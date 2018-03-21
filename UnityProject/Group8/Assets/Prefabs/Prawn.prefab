@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prawn: {fileID: 1210985468393510}
   levelManager: {fileID: 0}
-  speed: 0.25
+  speed: 0.1
 --- !u!212 &212829407014855140
 SpriteRenderer:
   m_ObjectHideFlags: 1

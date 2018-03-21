@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: {fileID: 1661025767913822}
   level: {fileID: 0}
-  speed: 0
+  speed: 0.1
 --- !u!212 &212643059893161736
 SpriteRenderer:
   m_ObjectHideFlags: 1
