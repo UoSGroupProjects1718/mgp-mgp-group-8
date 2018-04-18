@@ -8,8 +8,15 @@ public class Dumpling : MonoBehaviour {
     public GameObject dumpling;
     public GameObject levelManager;
 
+    private AudioSource audio;
+
 	// Range allows speed to be set in the inspector, individual for each type of food .
-    [Range(0f, 6f)] public float speed; 
+    [Range(0f, 6f)] public float speed;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
 
     // Use this for initialization.
     void Update () {
@@ -25,5 +32,10 @@ public class Dumpling : MonoBehaviour {
         // This gets the LevelManager and calls the DestroyPrawn function.
         //levelManager.GetComponent<LevelManager>().DestroyDumpling();
         Destroy(gameObject);
+    }
+
+    public void PlaySound()
+    {
+        audio.Play();
     }
 }

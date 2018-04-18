@@ -10,6 +10,8 @@ public class boundaryCubeScript : MonoBehaviour
     public GameObject currentSalmon;
     public GameObject currentNigri;
 
+    private Dumpling dumpling;
+
     // Event called on begin overlap with trigger box
     private void OnTriggerEnter(Collider other)
     {

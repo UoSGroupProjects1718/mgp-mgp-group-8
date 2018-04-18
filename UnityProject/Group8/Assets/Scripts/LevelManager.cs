@@ -85,9 +85,14 @@ public class LevelManager : MonoBehaviour
 
     public int turnRotation;
 
+    private AudioSource audioSource;
 
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
-	// A function that is assigned to a button and called when the button is clicked.
+    // A function that is assigned to a button and called when the button is clicked.
     public void OnePlayerClick()
     {
 		// If the parameters of the if statement are met, the function is called.
@@ -270,7 +275,7 @@ public class LevelManager : MonoBehaviour
     {
         // Play sound on tap
         // Bug: Doesn't play the right sound
-        //gameObject.GetComponent<AudioSource>().Play();
+        audioSource.Play();
 
         if (currentPrawn == null) { return; }
         last = distanceBetween;
