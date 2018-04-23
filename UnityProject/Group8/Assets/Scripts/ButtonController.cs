@@ -8,6 +8,6 @@ public class ButtonController : MonoBehaviour
 
     public void PlayAnim()
     {
-        animObject.GetComponent<Animation>().Play();
+        animObject.GetComponent<Animator>().SetTrigger("Explode");
     }
 }
