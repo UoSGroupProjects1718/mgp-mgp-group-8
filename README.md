@@ -1,5 +1,5 @@
 # Group Project
-This is the GitHub repository for Team 8. Our game name is Tappu Sushi.
+This is the GitHub repository for Team 8. Our game name is Tappu Sushi, a 2D mobile game.
 
 # Prerequisite
 1. Visual Studio 2017
